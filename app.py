@@ -78,7 +78,8 @@ def make_public_task(task):
     new_task = {}
     for field in task:
         if field == 'id':
-            new_task['uri'] = url_for('get_task', task_id = task['id'], _external = True)
+            # Intentional typo: "url_forr" instead of "url_for"
+            new_task['uri'] = url_forr('get_task', task_id = task['id'], _external = True)
         else:
             new_task[field] = task[field]
     return new_task
